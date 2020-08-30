@@ -6,7 +6,7 @@ import os
 import argparse
 import sys
 
-api_key="AIzaSyBRKyblxfbctTeEl--3OwO30FSgJ7wnqQI"
+api_key="None"
 
 def get_data(apikey, search_phrase, broad_tag):
 	youtube = build("youtube", "v3", developerKey = api_key)
