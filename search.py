@@ -8,6 +8,7 @@ import sys
 
 api_key="None"
 
+#function to collect data using search phrase we put in
 def get_data(apikey, search_phrase, broad_tag):
 	youtube = build("youtube", "v3", developerKey = api_key)
 	numres=25
@@ -44,6 +45,7 @@ if args.query == None or args.tag == None:
 	print("require query and broad tag")
 	sys.exit()
 
+#store the video data in Pandas DataFrame
 if os.path.isfile("vids.pkl"):
     vids = pd.read_pickle("vids.pkl")
     new = pd.concat(get_data(api_key, args.query, args.tag))
